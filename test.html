@@ -2,11 +2,46 @@
 <head>
 	<title>Animation Test</title>
 	<style>
+	body {
+		background: #aaa;
+		margin: 0; padding: 0;
+	}
+	#animateDiv {
+		background: #34349a;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	}
+	.animate-out {
+		background: red !important;
+	}
+	.animate-in {
+		background: blue !important;
+	}
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #fefefe;
+		
+	}
+	a:hover {
+		text-decoration: underline;
+	}
 	</style>
+	<script>
+	var isIn = true;
+	var toggle = function() {
+		
+		var e = document.getElementById('animateDiv');
+		if (isIn) e.className = 'animate-out';
+		else e.className = 'animate-in';
+		isIn = !isIn;
+	}
+	</script>
 </head>
 <body>
 	<div id="animateDiv">
-		<a href="#">Click to animate</a>
+		<a href="#" onclick="toggle()">Click to animate</a>
 	</div>
 </body>
 </html>
