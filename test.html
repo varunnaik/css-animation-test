@@ -11,12 +11,21 @@
 		width: 100%;
 		height: 100%;
 		text-align: center;
+		position: absolute;
 	}
 	.animate-out {
-		background: red !important;
+		animation-name: goOut;
+		animation-duration: 1s;
+		animation-timing-function: ease;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
 	}
 	.animate-in {
-		background: blue !important;
+		animation-name: goIn;
+		animation-duration: 1s;
+		animation-timing-function: ease;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
 	}
 	a {
 		text-decoration: none;
@@ -26,6 +35,34 @@
 	}
 	a:hover {
 		text-decoration: underline;
+	}
+	@keyframes goOut {
+		from {
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: 0;
+		}
+		to {
+			height: 75%;
+			width: 75%;
+			left: 15%;
+			top: 15%;
+		}	
+	}
+	@keyframes goIn {
+		from {
+			height: 75%;
+			width: 75%;
+			left: 15%;
+			top: 15%;
+		}
+		to {
+			height: 100%;
+			width: 100%;
+			left: 0%;
+			top: 0%;
+		}	
 	}
 	</style>
 	<script>
